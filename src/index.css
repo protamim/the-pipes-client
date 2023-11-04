@@ -1,0 +1,14 @@
+/* google font - Hind maduri */
+@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&display=swap');
+
+/* Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  font-family: 'Hind Madurai', sans-serif;
+}
+.active {
+  border-bottom: 1px solid white;
+}

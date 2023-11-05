@@ -10,15 +10,6 @@ const NavigationLinks = () => {
         <li>
           <NavLink to={"/services"}>Services</NavLink>
         </li>
-        <li>
-          <NavLink to={"/add-service"}>Add A Service</NavLink>
-        </li>
-        <li>
-          <NavLink to={"/manage-services"}>Manage Services</NavLink>
-        </li>
-        <li>
-          <NavLink to={"/schedule"}>My Schedule</NavLink>
-        </li>
       </ul>
     </>
   );

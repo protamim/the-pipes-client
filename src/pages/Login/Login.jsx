@@ -1,21 +1,74 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, useNavigate, useNavigation } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
+import { GoogleAuthProvider } from "firebase/auth";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
+import { MdDownloadDone } from 'react-icons/md'
+// Flowbite
+("use client");
+import { HiInformationCircle } from "react-icons/hi";
+import { Alert } from "flowbite-react";
 
 const Login = () => {
+  const provider = new GoogleAuthProvider();
+  const [signInSuccess, setSignInSuccess] = useState("");
+  const [signInErr, setSignInErr] = useState("");
+  const { logIn, socialSignIn } = useContext(AuthContext);
+  const [showPass, setShowPass] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // const hideShow = () => {
+  //   setShowPass(!showPass);
+  // };
+
+  const googleSignIn = (provider) => {
+    socialSignIn(provider)
+      .then(() => {
+        setSignInSuccess("Signed in successfully!");
+        setSignInErr("");
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((err) => {
+        setSignInErr(err.message);
+        setSignInSuccess("");
+      });
+  };
+
+  const handleSignIn = (e) => {
+    e.preventDefault();
+    const form = new FormData(e.currentTarget);
+    const email = form.get("email");
+    const password = form.get("password");
+    console.log(email, password);
+
+    logIn(email, password)
+      .then((res) => {
+        setSignInSuccess("Signed in successfully!");
+        setSignInErr("");
+        navigate(location?.state ? location.state : "/");
+        console.log(res);
+      })
+      .catch((err) => {
+        setSignInErr("Invalid login credentials");
+        setSignInSuccess("");
+        console.log(err);
+      });
+  };
+
   return (
     <>
       <section>
         <div className="flex justify-center items-center">
           <div className="w-full max-w-md p-8 space-y-3 rounded-xl dark:bg-gray-900 dark:text-gray-100">
             <h1 className="text-2xl font-bold text-center">Login</h1>
-            <form className="space-y-6">
+            <form onSubmit={handleSignIn} className="space-y-6">
               <div className="space-y-1 text-sm">
-                <label className="block dark:text-gray-400">Username</label>
+                <label className="block dark:text-gray-400">Email Address</label>
                 <input
-                  type="text"
-                  name="username"
-                  id="username"
-                  placeholder="Username"
+                  type="email"
+                  name="email"
+                  placeholder="Email"
                   className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-blue-400"
                 />
               </div>
@@ -24,17 +77,24 @@ const Login = () => {
                 <input
                   type="password"
                   name="password"
-                  id="password"
                   placeholder="Password"
                   className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-blue-400"
                 />
-                <div className="flex justify-end text-xs dark:text-gray-400">
-                  <a rel="noopener noreferrer" href="#">
-                    Forgot Password?
-                  </a>
-                </div>
               </div>
-              <button className="block w-full bg-slate-400 p-3 text-center rounded-sm dark:text-gray-900 dark:bg-blue-400">
+              {/* Shows validation message */}
+              {signInErr && (
+                <Alert color="failure" icon={HiInformationCircle}>
+                  <span className="font-medium">{signInErr}</span>
+                </Alert>
+              )}
+              {signInSuccess && (
+                <Alert color="success" icon={MdDownloadDone}>
+                <span className="font-medium">{signInSuccess}</span>
+              </Alert>
+              )}
+              <button
+                className="block w-full bg-slate-400 p-3 text-center rounded-sm dark:text-gray-900 dark:bg-blue-400"
+              >
                 Login
               </button>
             </form>
@@ -47,6 +107,7 @@ const Login = () => {
             </div>
             <div className="flex justify-center space-x-4">
               <button
+                onClick={() => googleSignIn(provider)}
                 aria-label="Log in with Google"
                 className="p-3 rounded-sm"
               >

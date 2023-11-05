@@ -4,6 +4,7 @@ import logoLight from "../../../assets/img/logo-light.png";
 import NavLogin from "./NavLogin";
 import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider/AuthProvider";
+import Dashboard from "./Dashboard";
 
 
 const Navbar = () => {
@@ -22,7 +23,7 @@ const Navbar = () => {
     <>
       <nav className="bg-gray-300">
         <div className="container mx-auto px-5">
-          <div className="h-16 grid grid-cols-12 gap-8 items-center">
+          <div className="h-16 grid grid-cols-12 gap-8 items-center justify-center">
             {/* Navbar Logo */}
             <div className="col-span-2">
               <NavLink>
@@ -30,8 +31,10 @@ const Navbar = () => {
               </NavLink>
             </div>
             {/* Navbar Links */}
-            <div className="col-span-10 flex justify-end gap-10">
+            <div className="col-span-10 flex justify-end gap-10 items-center">
               <NavigationLinks />
+              {/* Show dashboard for user */}
+              {user && <Dashboard />}
               {/* Navbar Login */}
               <div>
               {/* login status */}

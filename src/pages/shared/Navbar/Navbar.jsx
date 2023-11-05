@@ -4,6 +4,7 @@ import logoLight from "../../../assets/img/logo-light.png";
 import NavLogin from "./NavLogin";
 
 const Navbar = () => {
+  console.log(import.meta.env.VITE_API_KEY);
   return (
     <>
       <nav className="bg-gray-300">

@@ -2,9 +2,22 @@ import { NavLink } from "react-router-dom";
 import NavigationLinks from "./NavigationLinks";
 import logoLight from "../../../assets/img/logo-light.png";
 import NavLogin from "./NavLogin";
+import { useContext } from "react";
+import { AuthContext } from "../../../Providers/AuthProvider/AuthProvider";
+
 
 const Navbar = () => {
-  console.log(import.meta.env.VITE_API_KEY);
+  const {logOut, user} = useContext(AuthContext);
+  console.log(user);
+
+  const handleLogOut = ()=> {
+    logOut().then(res => {
+      console.log(res);
+    }).catch(err => {
+      console.log(err);
+    })
+  }
+  
   return (
     <>
       <nav className="bg-gray-300">
@@ -21,7 +34,11 @@ const Navbar = () => {
               <NavigationLinks />
               {/* Navbar Login */}
               <div>
-                <NavLogin />
+              {/* login status */}
+                {user ?
+                <button onClick={handleLogOut}>Log Out</button>
+              :
+              <NavLogin />}
               </div>
             </div>
           </div>

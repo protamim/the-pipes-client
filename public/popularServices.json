@@ -1,0 +1,30 @@
+[
+  {
+    "serviceName": "Chair Repair and making",
+    "serviceDescription": "This involves fixing damage to the chair’s frame, legs, or backrest. For example, repairing broken or loose chair legs or fixing a cracked frame.Seat and Cushion Repairs: Repairing or replacing the seat and cushioning materials to restore comfort and appearance.",
+    "viewDetail": "View Details",
+    "servicePrice": "$49.99",
+    "serviceImage": "https://amarsheba.com/wp-content/uploads/2023/09/Chair-Repair-Service-Dhaka--919x349.jpg"
+  },
+  {
+    "serviceName": "Service B",
+    "serviceDescription": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "viewDetail": "https://example.com/service-b-details",
+    "servicePrice": 79.99,
+    "serviceImage": "https://example.com/images/service-b.jpg"
+  },
+  {
+    "serviceName": "Service C",
+    "serviceDescription": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+    "viewDetail": "https://example.com/service-c-details",
+    "servicePrice": 29.99,
+    "serviceImage": "https://example.com/images/service-c.jpg"
+  },
+  {
+    "serviceName": "Service D",
+    "serviceDescription": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
+    "viewDetail": "https://example.com/service-d-details",
+    "servicePrice": 99.99,
+    "serviceImage": "https://example.com/images/service-d.jpg"
+  }
+]

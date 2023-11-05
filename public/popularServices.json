@@ -1,30 +1,34 @@
 [
   {
-    "serviceName": "Chair Repair and making",
-    "serviceDescription": "This involves fixing damage to the chair’s frame, legs, or backrest. For example, repairing broken or loose chair legs or fixing a cracked frame.Seat and Cushion Repairs: Repairing or replacing the seat and cushioning materials to restore comfort and appearance.",
+    "id": 1,
+    "serviceName": "For Bathrooms",
+    "serviceDescription": "We turn your old bathrooms into brand new modern and fully functioning rooms with high-quality plumbing.",
     "viewDetail": "View Details",
     "servicePrice": "$49.99",
-    "serviceImage": "https://amarsheba.com/wp-content/uploads/2023/09/Chair-Repair-Service-Dhaka--919x349.jpg"
+    "serviceImage": "https://thepipes.ancorathemes.com/wp-content/uploads/2020/04/post34-copyright-890x684.jpg"
   },
   {
-    "serviceName": "Service B",
-    "serviceDescription": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "viewDetail": "https://example.com/service-b-details",
-    "servicePrice": 79.99,
-    "serviceImage": "https://example.com/images/service-b.jpg"
+    "id": 2,
+    "serviceName": "For Kitchen",
+    "serviceDescription": "Kitchen is a number one room in every home, and it requires special attention while doing pipe repairs.",
+    "viewDetail": "View Details",
+    "servicePrice": "$79.99",
+    "serviceImage": "https://thepipes.ancorathemes.com/wp-content/uploads/2020/06/post46-copyright-890x684.jpg"
   },
   {
-    "serviceName": "Service C",
-    "serviceDescription": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-    "viewDetail": "https://example.com/service-c-details",
-    "servicePrice": 29.99,
-    "serviceImage": "https://example.com/images/service-c.jpg"
+    "id": 3,
+    "serviceName": "For Repair Works",
+    "serviceDescription": "Not only do we have premium products and fixtures, but our store also offers installation services.",
+    "viewDetail": "View Details",
+    "servicePrice": "$29.99",
+    "serviceImage": "https://thepipes.ancorathemes.com/wp-content/uploads/2020/04/post24-copyright-890x684.jpg"
   },
   {
-    "serviceName": "Service D",
-    "serviceDescription": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
-    "viewDetail": "https://example.com/service-d-details",
-    "servicePrice": 99.99,
-    "serviceImage": "https://example.com/images/service-d.jpg"
+    "id": 4,
+    "serviceName": "Drain cleaning",
+    "serviceDescription": "A drain cleaner or opener is a person, device or product unblocking sewer pipes or clogged wastewater drains.",
+    "viewDetail": "View Details",
+    "servicePrice": "$99.99",
+    "serviceImage": "https://www.facilitiesnet.com/resources/editorial/2022/19276-DrainCleaning.jpg"
   }
 ]

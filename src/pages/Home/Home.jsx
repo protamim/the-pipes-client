@@ -1,6 +1,8 @@
+import Approch from "./Approch/Approch";
 import Banner from "./Banner/Banner";
 import PlumberHome from "./PlumberHome/PlumberHome";
 import PopularServices from "./PopularServices/PopularServices";
+import PricePlan from "./PricePlan/PricePlan";
 
 
 const Home = () => {
@@ -9,6 +11,8 @@ const Home = () => {
             <Banner />
             <PlumberHome />
             <PopularServices />
+            <Approch />
+            <PricePlan />
         </>
     );
 };

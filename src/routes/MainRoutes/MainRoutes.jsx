@@ -4,6 +4,7 @@ import Home from "../../pages/Home/Home";
 import Login from "../../pages/Login/Login";
 import Register from "../../pages/Register/Register";
 import PrivateRoute from "../PrivateRoutes/PrivateRoute";
+import AllServices from "../../pages/AllServices/AllServices";
 
 const MainRoutes = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const MainRoutes = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      {
+        path: '/all-services',
+        element: <AllServices />
+      }
     ],
   },
 ]);

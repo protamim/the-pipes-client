@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import PopuCard from "./PopuCard";
+import { Link } from "react-router-dom";
 
 const PopularServices = () => {
   const [services, setServices] = useState([]);
@@ -14,7 +15,7 @@ const PopularServices = () => {
 
   return (
     <>
-      <section className="my-10 bg-gray-100">
+      <section className="py-14 bg-gray-100">
         <div className="container mx-auto px-5">
           <div className="grid gap-8 grid-cols-12">
             <div className="col-span-12 text-center">
@@ -24,7 +25,9 @@ const PopularServices = () => {
             {services.map((service) => (
               <PopuCard key={service.id} service={service} />
             ))}
-            <button className="col-span-12">Show All</button>
+            <button className="col-span-12">
+              <Link to={'/all-services'}>Show All</Link>
+            </button>
           </div>
         </div>
       </section>

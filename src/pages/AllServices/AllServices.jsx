@@ -1,7 +1,10 @@
 import allServicesBg from "../../assets/img/all_services-bg.png";
 import {IoMdSearch} from 'react-icons/io'
+import useServices from "../../Hooks/useServices";
 
 const AllServices = () => {
+  const {data} = useServices();
+  console.log(data);
   return (
     <>
     {/* Filter section */}

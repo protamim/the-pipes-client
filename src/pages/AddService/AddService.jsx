@@ -4,6 +4,7 @@ import { BiArrowBack } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
+import axios from "axios";
 
 const AddService = () => {
     const {user} = useContext(AuthContext)
@@ -28,28 +29,22 @@ const AddService = () => {
       serviceArea,
       description
     };
-    console.log(prodInfo);
+    // console.log(prodInfo);
 
-    // fetch("https://brew-bite-server.vercel.app/products", {
-    //   method: "POST",
-    //   headers: {
-    //     "content-type": "application/json",
-    //   },
-    //   body: JSON.stringify(prodInfo),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     if (data.insertedId) {
-    //       Swal.fire({
-    //         text: "Added the product successfully!",
-    //         icon: "success",
-    //       });
-    //     }
-    //     console.log(data);
-    //   });
+    axios.post('http://localhost:3000/services', prodInfo)
+    .then(res => {
+        if(res.data.insertedId){
+          Swal.fire({
+            text: 'Added the product successfully!',
+            icon: 'success'
+          })
+        }
+    }).catch(err => {
+        console.log(err);
+    })
 
     // reset form after submision
-    // form.reset();
+    form.reset();
   };
 
   return (

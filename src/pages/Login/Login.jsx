@@ -8,6 +8,7 @@ import { MdDownloadDone } from 'react-icons/md'
 ("use client");
 import { HiInformationCircle } from "react-icons/hi";
 import { Alert } from "flowbite-react";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const provider = new GoogleAuthProvider();
@@ -48,6 +49,10 @@ const Login = () => {
         setSignInErr("");
         navigate(location?.state ? location.state : "/");
         console.log(res);
+        Swal.fire({
+          text: 'Login successed!',
+          icon: 'success'
+        })
       })
       .catch((err) => {
         setSignInErr("Invalid login credentials");

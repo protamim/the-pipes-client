@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const ServicesCard = ({ product }) => {
   // console.log(Object.keys(product).join(", "));
@@ -27,7 +28,9 @@ const ServicesCard = ({ product }) => {
             </div>
           </div>
           <div className="text-center">
-            <button className="bg-gray-300 mb-4 mt-5 px-5 py-1">View Details</button>
+            <button className="bg-gray-300 mb-4 mt-5 px-5 py-1">
+                <Link to={_id}>View Details</Link>
+            </button>
           </div>
         </div>
       </div>

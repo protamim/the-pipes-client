@@ -6,7 +6,9 @@ import { useState } from "react";
 
 const AllServices = () => {
   const { data } = useServices();
-  const [loadData, setLoadData] = useState(data)
+  // const [loadData, setLoadData] = useState(data)
+  // console.log(loadData);
+
   return (
     <>
       {/* Filter section */}
@@ -41,13 +43,13 @@ const AllServices = () => {
       <section className="py-10">
         <div className="container mx-auto px-5">
           <div className="grid gap-5 grid-cols-4">
-            {loadData?.slice(0, 8).map((prod) => (
+            {data?.slice(0, 8).map((prod) => (
               <ServicesCard key={prod._id} product={prod} />
             ))}
           </div>
           {/* More Button */}
           <div className="text-center my-8">
-            {data.length > 8 && <button className="bg-indigo-500 px-6 p-1 text-gray-100">More</button>}
+            {data?.length > 8 && <button className="bg-indigo-500 px-6 p-1 text-gray-100">More</button>}
           </div>
         </div>
       </section>

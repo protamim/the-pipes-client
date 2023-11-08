@@ -9,12 +9,13 @@ import AddService from "../../pages/AddService/AddService";
 import ServiceDetails from "../../pages/AllServices/ServiceDetails/ServiceDetails";
 import ManageServices from "../../pages/ManageServices/ManageServices";
 import UpdateService from "../../pages/ManageServices/UpdateService";
+import ErrorPage from "../../pages/ErrorPage/ErrorPage";
 
 const MainRoutes = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
-    errorElement: <h2>404 page under construction</h2>,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -43,7 +44,7 @@ const MainRoutes = createBrowserRouter([
       {
         path: '/all-services/:id',
         element: <ServiceDetails />,
-        loader: ({params})=> fetch(`http://localhost:3000/services/${params.id}`)
+        loader: ({params})=> fetch(`https://b8a11-server-side-protamim.vercel.app/services/${params.id}`)
       },
       {
         path: '/add-service',
@@ -56,7 +57,7 @@ const MainRoutes = createBrowserRouter([
       {
         path: '/update/:id',
         element: <UpdateService />,
-        loader: ({params})=> fetch(`http://localhost:3000/services/${params.id}`)
+        loader: ({params})=> fetch(`https://b8a11-server-side-protamim.vercel.app/services/${params.id}`)
       }
     ],
   },

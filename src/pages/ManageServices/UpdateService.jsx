@@ -30,7 +30,7 @@ const UpdateService = () => {
       description,
     };
     // update existing service
-    axios.put(`http://localhost:3000/services/${_id}`, info)
+    axios.put(`https://b8a11-server-side-protamim.vercel.app/services/${_id}`, info)
     .then(res => {
         console.log(res);
         if(res?.data?.modifiedCount>0){

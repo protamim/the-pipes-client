@@ -38,7 +38,7 @@ const ServiceDetails = () => {
     };
     console.log(serviceInfo);
 
-    axios.post('http://localhost:3000/booking', serviceInfo)
+    axios.post('https://b8a11-server-side-protamim.vercel.app/booking', serviceInfo)
     .then(res => {
         if(res.data.insertedId){
           Swal.fire({

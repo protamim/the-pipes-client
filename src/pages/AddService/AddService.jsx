@@ -31,7 +31,7 @@ const AddService = () => {
     };
     console.log(prodInfo);
 
-    axios.post('http://localhost:3000/services', prodInfo)
+    axios.post('https://b8a11-server-side-protamim.vercel.app/services', prodInfo)
     .then(res => {
         if(res.data.insertedId){
           Swal.fire({

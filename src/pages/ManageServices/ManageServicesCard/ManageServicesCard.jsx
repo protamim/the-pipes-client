@@ -12,7 +12,7 @@ const ManageServicesCard = ({ product, refetch }) => {
   const { _id, serviceName, serviceImage } = product;
     const [openModal, setOpenModal] = useState(false);
 
-    
+
     function onCloseModal() {
       setOpenModal(false);
     }
@@ -28,7 +28,7 @@ const ManageServicesCard = ({ product, refetch }) => {
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {
       if(result.isConfirmed) {
-        axios.delete(`http://localhost:3000/services/${_id}`)
+        axios.delete(`https://b8a11-server-side-protamim.vercel.app/services/${_id}`)
         .then(res => {
           if(res?.data?.deletedCount > 0){
             Swal.fire({

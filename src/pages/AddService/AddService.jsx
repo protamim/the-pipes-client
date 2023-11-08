@@ -29,7 +29,7 @@ const AddService = () => {
       serviceArea,
       description
     };
-    // console.log(prodInfo);
+    console.log(prodInfo);
 
     axios.post('http://localhost:3000/services', prodInfo)
     .then(res => {
@@ -140,7 +140,7 @@ const AddService = () => {
               </div>
               <div className="text-center mt-8">
                 <button className="bg-slate-500 w-full text-white text-2xl py-1">
-                  Add Product
+                  <span>Add Product</span>
                 </button>
               </div>
             </form>

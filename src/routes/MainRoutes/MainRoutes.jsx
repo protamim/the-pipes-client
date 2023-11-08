@@ -30,35 +30,49 @@ const MainRoutes = createBrowserRouter([
         element: <Register />,
       },
       {
-        path: "/view-details",
+        path: "/all-services",
+        element: <AllServices />,
+      },
+      {
+        path: "/all-services/:id",
+        element: <ServiceDetails />,
+        loader: ({ params }) =>
+          fetch(
+            `https://b8a11-server-side-protamim.vercel.app/services/${params.id}`
+          ),
+      },
+      {
+        path: "/add-service",
         element: (
           <PrivateRoute>
-            <h3>View details content goes here</h3>
+            <AddService />
           </PrivateRoute>
         ),
       },
       {
-        path: '/all-services',
-        element: <AllServices />
+        path: "/manage-services",
+        element: (
+          <PrivateRoute>
+            <ManageServices />
+          </PrivateRoute>
+        ),
       },
       {
-        path: '/all-services/:id',
-        element: <ServiceDetails />,
-        loader: ({params})=> fetch(`https://b8a11-server-side-protamim.vercel.app/services/${params.id}`)
-      },
-      {
-        path: '/add-service',
-        element: <AddService />
-      },
-      {
-        path: '/manage-services',
-        element: <ManageServices />
-      },
-      {
-        path: '/update/:id',
+        path: "/update/:id",
         element: <UpdateService />,
-        loader: ({params})=> fetch(`https://b8a11-server-side-protamim.vercel.app/services/${params.id}`)
-      }
+        loader: ({ params }) =>
+          fetch(
+            `https://b8a11-server-side-protamim.vercel.app/services/${params.id}`
+          ),
+      },
+      {
+        path: "/my-schedules",
+        element: (
+          <PrivateRoute>
+            <h2>My Schedules content goes here</h2>
+          </PrivateRoute>
+        ),
+      },
     ],
   },
 ]);

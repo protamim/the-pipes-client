@@ -10,6 +10,9 @@ import ServiceDetails from "../../pages/AllServices/ServiceDetails/ServiceDetail
 import ManageServices from "../../pages/ManageServices/ManageServices";
 import UpdateService from "../../pages/ManageServices/UpdateService";
 import ErrorPage from "../../pages/ErrorPage/ErrorPage";
+import MySchedules from "../../pages/MySchedules/MySchedules";
+import MyBooking from "../../pages/MySchedules/Booking/MyBooking";
+import Pending from "../../pages/MySchedules/Pending/Pending";
 
 const MainRoutes = createBrowserRouter([
   {
@@ -65,16 +68,27 @@ const MainRoutes = createBrowserRouter([
             `https://b8a11-server-side-protamim.vercel.app/services/${params.id}`
           ),
       },
-      {
-        path: "/my-schedules",
-        element: (
-          <PrivateRoute>
-            <h2>My Schedules content goes here</h2>
-          </PrivateRoute>
-        ),
-      },
     ],
   },
+  {
+      path: "/my-schedules",
+      element: (
+        <PrivateRoute>
+          <MySchedules />
+        </PrivateRoute>
+      ),
+      children: [
+        {
+          path: '/my-schedules/booking',
+          element: <MyBooking />,
+        },
+        {
+          path: '/my-schedules/pending',
+          element: <Pending />
+        }
+      ]
+    
+  }
 ]);
 
 export default MainRoutes;

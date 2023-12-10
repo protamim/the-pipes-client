@@ -5,8 +5,8 @@ const Approch = () => {
     <>
       <section style={{backgroundImage:`url(${approchBg})`}} className='bg-cover bg-left-top'>
         <div className="container mx-auto px-5">
-          <div className="grid gap-8 grid-cols-12 items-center min-h-[544px]">
-            <div className="col-span-6 space-y-7">
+          <div className="grid gap-8 grid-cols-12 items-center min-h-[544px] w-full">
+            <div className="col-span-12 md:col-span-6 space-y-7">
               <h4 className='text-base text-indigo-400'>PLUMBING COMPANY</h4>
               <h2 className='text-5xl'>Innovative <br /> Approach</h2>
               <p className='text-lg'>Professional installation is key to the impeccable functioning of your pipes, faucets and heaters. Let us take care of the issues in your homes and offices today.</p>

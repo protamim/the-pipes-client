@@ -13,7 +13,7 @@ const PricePlan = () => {
               <h2 className="text-5xl">Our Price Plans</h2>
             </div>
             {/* Plan 1 */}
-            <Card className="col-span-4">
+            <Card className="col-span-12 md:col-span-4">
               <h5 className="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">
                 Design Consulting
               </h5>
@@ -64,7 +64,7 @@ const PricePlan = () => {
               </button>
             </Card>
             {/* Plan 2 */}
-            <Card className="col-span-4">
+            <Card className="col-span-12 md:col-span-4">
               <h5 className="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">
                 Home Maintenance
               </h5>
@@ -115,7 +115,7 @@ const PricePlan = () => {
               </button>
             </Card>
             {/* Plan 3 */}
-            <Card className="col-span-4">
+            <Card className="col-span-12 md:col-span-4">
               <h5 className="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">
                 Repair Deal
               </h5>

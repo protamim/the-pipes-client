@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 const PlumberHome = () => {
   return (
     <>
-      <section>
-        <div className="container mx-auto">
-          <div className="flex gap-10 justify-between items-center">
-            <div className="flex-1">
+      <section className="py-12">
+        <div className="container mx-auto px-5">
+          <div className="flex flex-col md:flex-row gap-10 justify-between items-center">
+            <div className="flex-1 order-2 md:-order-none">
               <img className="h-[480px] object-cover object-left-top" src={plumber} alt="plumber" />
             </div>
             <div className="flex-1">

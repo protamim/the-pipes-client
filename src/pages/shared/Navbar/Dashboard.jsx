@@ -13,7 +13,7 @@ const Dashboard = () => {
         <NavLink to={"/manage-services"}>Manage Services</NavLink>
         </Dropdown.Item>
         <Dropdown.Item>
-        <NavLink to={"/schedule"}>My Schedules</NavLink>
+        <NavLink to={"/my-schedules"}>My Schedules</NavLink>
         </Dropdown.Item>
       </Dropdown>
     </>

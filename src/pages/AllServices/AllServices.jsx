@@ -3,11 +3,20 @@ import { IoMdSearch } from "react-icons/io";
 import useServices from "../../Hooks/useServices";
 import ServicesCard from "./ServicesCard/ServicesCard";
 import { useState } from "react";
+import Loading from "../../components/Loading";
 
 const AllServices = () => {
-  const { data } = useServices();
-  // const [loadData, setLoadData] = useState(data)
-  // console.log(loadData);
+  const { data, isLoading } = useServices();
+  const defaultData = data?.slice(0, 8);
+  const [loadData, setLoadData] = useState(defaultData);
+  console.log(isLoading, defaultData, data);
+  if (isLoading) {
+    return <Loading />;
+  }
+  
+  const fetchAll = () => {
+    setLoadData(data);
+  };
 
   return (
     <>
@@ -43,13 +52,22 @@ const AllServices = () => {
       <section className="py-10">
         <div className="container mx-auto px-5">
           <div className="grid gap-5 grid-cols-4">
-            {data?.slice(0, 8).map((prod) => (
+            {data?.slice(0, loadData?.length).map((prod) => (
               <ServicesCard key={prod._id} product={prod} />
             ))}
           </div>
           {/* More Button */}
           <div className="text-center my-8">
-            {data?.length > 8 && <button className="bg-indigo-500 px-6 p-1 text-gray-100">More</button>}
+            {data?.length > defaultData?.length && (
+              <button
+                onClick={fetchAll}
+                className={`bg-indigo-500 px-6 p-1 text-gray-100 ${
+                  data?.length == loadData?.length && "hidden"
+                }`}
+              >
+                More
+              </button>
+            )}
           </div>
         </div>
       </section>

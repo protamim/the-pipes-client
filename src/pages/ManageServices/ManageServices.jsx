@@ -15,7 +15,7 @@ const ManageServices = () => {
       <section className="my-16">
         <div className="container mx-auto px-5">
             <h2 className="text-center text-3xl mb-8">Manage Your Services</h2>
-          <div className="grid gap-8 grid-cols-2">
+          <div className="grid gap-8 grid-cols-1 md:grid-cols-2">
             {data.map((prod) => (
               <ManageServicesCard key={prod._id} product={prod} refetch={refetch} />
             ))}

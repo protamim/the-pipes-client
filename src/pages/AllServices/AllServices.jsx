@@ -51,7 +51,7 @@ const AllServices = () => {
       {/* Services section */}
       <section className="py-10">
         <div className="container mx-auto px-5">
-          <div className="grid gap-5 grid-cols-4">
+          <div className="grid gap-5 grid-cols-1 md:grid-cols-4">
             {data?.slice(0, loadData?.length).map((prod) => (
               <ServicesCard key={prod._id} product={prod} />
             ))}

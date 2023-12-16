@@ -13,7 +13,7 @@ const MyBooking = () => {
   return (
     <>
       <section>
-        <div>
+        <div className="space-y-5 md:space-y-0">
           {data?.map((ser) => (
             <div key={ser._id} className="bg-slate-200 grid grid-cols-3 gap-5 items-center justify-end">
               <div>
